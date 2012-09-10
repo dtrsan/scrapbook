@@ -1,0 +1,10 @@
+{
+    Description = "smartd";
+    Provides = ("smartd");
+    OrderPreference = "None";
+    Messages = {
+        start = "Starting smartd...";
+        stop = "Stopping smartd...";
+    };
+}
+

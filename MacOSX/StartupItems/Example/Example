@@ -1,0 +1,26 @@
+#!/bin/sh
+
+#
+# Mac OS X StartUp script example
+#
+
+. /etc/rc.common
+
+StartService ()
+{
+    echo "Starting service"
+}
+
+StopService ()
+{
+    echo "Stoping service"
+}
+
+RestartService ()
+{
+    StopService
+    StartService
+}
+
+RunService "$1"
+

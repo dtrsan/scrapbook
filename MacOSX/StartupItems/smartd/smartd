@@ -1,0 +1,41 @@
+#!/bin/sh
+
+#
+# Mac OS X StartUp script for smartd
+#
+
+. /etc/rc.common
+
+
+StartService ()
+{
+    PID_FILE="/var/run/smartd.pid"
+
+    if [ -f $PID_FILE ]; then
+        ConsoleMessage "smartd already running"
+        exit 1;
+    fi
+
+    /opt/local/sbin/smartd --pidfile $PID_FILE
+}
+
+StopService ()
+{
+    PID_FILE="/var/run/smartd.pid"
+
+    if [ ! -f $PID_FILE ]; then
+        ConsoleMessage "smartd is not running"
+        exit 1;
+    fi
+
+    kill $(cat $PID_FILE)
+}
+
+RestartService ()
+{
+    StopService
+    StartService
+}
+
+RunService "$1"
+

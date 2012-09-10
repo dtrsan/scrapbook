@@ -1,0 +1,11 @@
+{
+    Description = "example";
+    Provides = ("example");
+    Requires = ("Network");
+    OrderPreference = "Late" | "None";
+    Messages = {
+        start = "Starting example...";
+        stop = "Stopping example...";
+    };
+}
+
