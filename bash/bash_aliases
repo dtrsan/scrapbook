@@ -1,0 +1,48 @@
+# Additional aliases
+#
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias dir='dir --color=auto'
+    alias vdir='vdir --color=auto'
+
+    alias ls='ls -F --color=auto'
+    alias ll='ls -lhF --color=auto'
+    alias la='ls -A --color=auto'
+
+    alias grep='grep -i --color=auto'
+    alias egrep='egrep -i --color=auto'
+    alias fgrep='fgrep -i --color=auto'
+
+else
+    alias ls='ls -F'
+    alias ll='ls -lhF'
+    alias la='ls -A'
+
+    alias grep='grep -i'
+    alias egrep='egrep -i'
+    alias fgrep='fgrep -i'
+
+fi
+
+alias tree='tree -Csu'
+
+alias rm='rm -i'
+alias mv='mv -i'
+
+alias less='less -X'
+
+alias du='du -kh'
+alias df='df -kTh'
+
+alias tgz='tar xvzf'
+alias tbz='tar xvjf'
+alias tview='tar tvvf'
+
+alias webshare='python -c "import SimpleHTTPServer;SimpleHTTPServer.test()"'
+alias genpass='egrep -ioam1 --color=never '[a-z0-9]{8}' /dev/urandom'
+
+if command_exists colordiff; then
+    alias diff='colordiff'
+fi
+
