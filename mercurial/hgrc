@@ -1,0 +1,57 @@
+[ui]
+username = Domagoj Tršan <domagoj.trsan@gmail.com>
+editor = hgeditor
+verbose = true
+
+[auth]
+example.prefix = hg.example.com
+example.username = dtrsan
+example.password = password
+example.schema = https
+
+[hostfingerprints]
+hg.example.hr = 01:23:45:67:89:ab:cd:ef:ff:01:23:45:67:89:ab:cd:ef:ff:01:23
+
+[extensions]
+color =
+graphlog =
+purge =
+
+[color]
+status.modified = cyan
+status.added = green
+status.removed = red
+status.deleted = red underline
+status.unknown = magenta
+status.ignored = none
+
+status.clean = none
+status.copied = none
+
+qseries.applied = blue bold underline
+qseries.unapplied = none
+qseries.missing = red bold
+
+diff.diffline = bold
+diff.extended = cyan bold
+diff.file_a = red bold
+diff.file_b = green bold
+diff.hunk = magenta
+diff.deleted = red
+diff.inserted = green
+diff.changed = white
+diff.trailingwhitespace = bold red_background
+
+resolve.unresolved = red bold
+resolve.resolved = green bold
+
+bookmarks.current = green
+
+branches.active = none
+branches.closed = none
+branches.current = green
+branches.inactive = none
+
+tags.normal = green
+tags.local = none
+
