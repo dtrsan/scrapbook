@@ -1,0 +1,7 @@
+ServerAliveInterval 30
+
+#Host example
+#    HostName example.com
+#    Port 22
+#    IdentityFile ~/.ssh/id_rsa
+
