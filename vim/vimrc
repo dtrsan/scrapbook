@@ -1,0 +1,122 @@
+set nocompatible                " choose no compatibility with legacy vi
+syntax enable
+set encoding=utf-8
+set showcmd                     " display incomplete commands
+filetype plugin indent on       " load file type plugins + indentation
+
+set history=10000               " command history (default is 20)
+
+set undolevels=1000             " maximum number of changes that can be undone
+set undoreload=10000            " maximum number lines to save for undo on a
+                                " buffer reload
+
+set number                      " display line numbers
+
+" Whitespace
+set nowrap                      " don't wrap lines
+set tabstop=4 shiftwidth=4      " a tab is four spaces
+set expandtab                   " use spaces, not tabs (optional)
+set backspace=indent,eol,start  " backspace through everything in insert mode
+
+" Define highlight colors for ExtraWhitespace
+highlight ExtraWhitespace ctermbg=red guibg=red cterm=bold gui=bold
+
+" Show trailing whitespace:
+"match ExtraWhitespace /\s\+$/
+" Show trailing whitespace and spaces before a tab:
+match ExtraWhitespace /\s\+$\| \+\ze\t/
+
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$\| \+\ze\t/
+
+" Searching
+set hlsearch                    " highlight matches
+set incsearch                   " incremental searching
+set ignorecase                  " searches are case insensitive...
+set smartcase                   " ... unless they contain at least one capital
+                                " letter
+
+set pastetoggle=<F5>
+
+" Folding settings
+set foldmethod=indent   " fold based on indent
+set foldnestmax=100     " deepest fold is 100 levels
+set nofoldenable        " dont fold by default
+set foldlevel=1
+
+" Easier window navigation
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+"set laststatus=x
+" 'laststatus' = 0   never a status line
+" 'laststatus' = 1   status line if there is more than one window
+" 'laststatus' = 2   always a status line
+set ls=2                        " always show status line
+if has('statusline')
+   " Status line detail:
+   " %F    full path to the file in the buffer
+   " %y    file type between braces (if defined)
+   " %([%R%M]%)    read-only, modified and modifiable flags between braces
+   " %{'!'[&ff=='default_file_format']}
+   "        shows a '!' if the file format is not the platform default
+   " %{'*'[!&list]}    shows a '*' if in list mode
+   " %{'~'[&pm=='']}   shows a '~' if in patchmode
+   " [%{getcwd()}]     current dir between braces
+   " (%{synIDattr(synID(line('.'),col('.'),0),'name')})
+   "        only for debug : display the current syntax item name
+   " %=     right-align following items
+   " [\%03.3b|0x\%02.2B]    ASCII / Hexadecimal value of a char
+   " #%n    buffer number
+   " %l/%L:%p%%,%c%V    line number, total number of lines, percentage through
+   "        file in line and column number
+   function SetStatusLineStyle()
+      if &stl == '' || &stl =~ 'synID'
+         let &stl="%F "
+         let &stl.="%y"
+         let &stl.="%([%R%M]%)"
+         let &stl.="%{'!'[&ff=='".&ff."']}"
+         let &stl.="%{'*'[!&list]}"
+         let &stl.="%{'~'[&pm=='']} "
+         "let &stl.="[%{getcwd()}]"
+         let &stl.="%="
+         let &stl.="[\%03.3b|0x\%02.2B]    "
+         let &stl.="#%n "
+         let &stl.="%l/%L:%p%%,%c%V "
+      else
+         let &stl="%F "
+         let &stl.="%y"
+         let &stl.="%([%R%M]%)"
+         let &stl.="%{'!'[&ff=='".&ff."']}"
+         let &stl.="%{'*'[!&list]}"
+         let &stl.="%{'~'[&pm=='']} "
+         "let &stl.="[%{getcwd()}]"
+         let &stl.=" (%{synIDattr(synID(line('.'),col('.'),0),'name')})"
+         let &stl.="%="
+         let &stl.="[\%03.3b|0x\%02.2B]    "
+         let &stl.="#%n "
+         let &stl.="%l/%L:%p%%,%c%V "
+      endif
+   endfunc
+   " Switch between the normal and vim-debug modes in the status line
+   nmap _ds :call SetStatusLineStyle()<CR>
+   call SetStatusLineStyle()
+   " Window title
+   if has('title')
+      set titlestring=%t%(\ [%R%M]%)
+   endif
+endif
+
+if has('gui_running')
+  " MacVim specific confguration
+  if has("gui_macvim")
+    " Disable toolbar on MacVim
+    set go-=T
+    " MacVim font
+    set guifont=Menlo:h11
+  endif
+else
+  colorscheme ron
+endif
