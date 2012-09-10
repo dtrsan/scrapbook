@@ -1,0 +1,29 @@
+startup_message off
+
+altscreen on
+defscrollback 10240
+
+vbell off
+
+hardstatus on
+hardstatus alwayslastline
+hardstatus string '%{= wk}%-Lw%50>%{=b cw} %n%f* %t %{= wk}%+Lw%<'
+
+# Custom keys
+bindkey -k k1 windowlist -b
+bindkey -k k2 prev
+bindkey -k k3 next
+bindkey -k k4 screen
+
+bindkey -k k5 redisplay
+bindkey -k k6 detach
+bindkey -k k7 copy
+bindkey -k k8 paste .
+
+bindkey -k F2 lockscreen
+
+# Change the xterm initialization string from is2=\E[!p\E[?3;4l\E[4l\E>
+# (This fixes the "Aborted because of window size change" konsole symptoms found
+#  in bug #134198)
+termcapinfo xterm 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
+
