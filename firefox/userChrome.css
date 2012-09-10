@@ -1,0 +1,7 @@
+/*
+ * Display the sidebar in opposite side
+ */
+#browser {
+  -moz-box-direction: reverse;
+}
+
