@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Show current active connections and show what ports your system is waiting for connections on
+
+#lsof -i | grep -E "(LISTEN|ESTABLISHED)" | awk '{print $1, $8"/"$5, $9}' | column -t
+lsof -i | awk '{ if($10 == "LISTEN" || $10 == "ESTABLISHED"); print $1, $2, $8"/"$5, $9; }' | column -t
+

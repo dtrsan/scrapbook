@@ -2,3 +2,12 @@ No special licence. Use it as you like but keep in mind that some scripts are
 not written by me and I cannot guarantee that these scripts are not licensed
 under some specific licence(s).
 
+That refers specifically to the:
+  - bin/flac2mp3
+  - bin/git-delete-history
+  - bin/hgeditor
+  - bin/unbuffer
+
+It is possible that other things could be also licensed under some specific
+licence(s).
+

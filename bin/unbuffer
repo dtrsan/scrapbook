@@ -1,0 +1,11 @@
+#!/usr/bin/expect --
+# Description: unbuffer stdout of a program
+# Author: Don Libes, NIST
+
+# Requires: expect
+# aptitude install expect
+
+eval spawn -noecho $argv
+set timeout -1
+expect
+
