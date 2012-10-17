@@ -11,6 +11,14 @@ set undoreload=10000            " maximum number lines to save for undo on a
                                 " buffer reload
 
 set number                      " display line numbers
+" Toggle between showing and hiding line numbers
+nmap <C-N><C-N> :set invnumber<CR>
+" Define highlight colors for line numbers
+autocmd ColorScheme * highlight LineNr term=bold
+            \ cterm=NONE ctermfg=DarkGrey ctermbg=NONE
+            \ gui=NONE guifg=DarkGrey guibg=NONE
+
+
 
 " Whitespace
 set nowrap                      " don't wrap lines
