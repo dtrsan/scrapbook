@@ -18,6 +18,16 @@ autocmd ColorScheme * highlight LineNr term=bold
             \ cterm=NONE ctermfg=DarkGrey ctermbg=NONE
             \ gui=NONE guifg=DarkGrey guibg=NONE
 
+set cursorline                  " enable current line highlighting
+" Clear current line highlight
+autocmd ColorScheme * highlight CursorLine term=NONE
+            \ ctermfg=NONE cterm=NONE
+            \ guifg=NONE gui=NONE
+
+" Define highlight colors for line numbers of current line
+autocmd ColorScheme * highlight CursorLineNr term=bold
+            \ ctermfg=Gray cterm=bold
+            \ guifg=Gray gui=bold
 
 
 " Whitespace
