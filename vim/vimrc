@@ -15,8 +15,8 @@ set number                      " display line numbers
 nmap <C-N><C-N> :set invnumber<CR>
 " Define highlight colors for line numbers
 autocmd ColorScheme * highlight LineNr term=bold
-            \ cterm=NONE ctermfg=DarkGrey ctermbg=NONE
-            \ gui=NONE guifg=DarkGrey guibg=NONE
+            \ ctermfg=DarkGrey ctermbg=NONE cterm=bold
+            \ guifg=DarkGrey guibg=NONE gui=bold
 
 set cursorline                  " enable current line highlighting
 " Clear current line highlight
