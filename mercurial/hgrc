@@ -1,6 +1,7 @@
 [ui]
 username = Domagoj Tršan <domagoj.trsan@gmail.com>
 editor = hgeditor
+merge = vimdiff
 verbose = true
 
 [auth]
@@ -54,4 +55,8 @@ branches.inactive = none
 
 tags.normal = green
 tags.local = none
+
+[merge-tools]
+vimdiff.executable = vimdiff
+vimdiff.args = $local $other $base
 
