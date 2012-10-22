@@ -138,3 +138,18 @@ if has('gui_running')
 else
   colorscheme ron
 endif
+
+" Vimdiff colors
+highlight DiffAdd term=bold
+            \ ctermfg=White ctermbg=Green cterm=bold
+            \ guifg=White guibg=Green gui=bold
+highlight DiffDelete term=NONE
+            \ ctermfg=Black ctermbg=Red cterm=NONE
+            \ guifg=Black guibg=Red gui=NONE
+highlight DiffChange term=bold
+            \ ctermfg=White ctermbg=Blue cterm=bold
+            \ gui=none guifg=White guibg=Blue gui=bold
+highlight DiffText term=bold
+            \ ctermfg=White ctermbg=Cyan  cterm=bold
+            \ guifg=White guibg=Cyan gui=bold
+
