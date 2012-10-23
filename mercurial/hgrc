@@ -57,6 +57,6 @@ tags.normal = green
 tags.local = none
 
 [merge-tools]
-vimdiff.executable = vimdiff
-vimdiff.args = $local $other $base
+vimdiff.executable = vim
+vimdiff.args = -d -c "wincmd K" $output $local $other $base
 
