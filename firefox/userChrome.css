@@ -5,3 +5,8 @@
   -moz-box-direction: reverse;
 }
 
+#personal-bookmarks toolbarbutton[type=menu] > image {
+  display: none !important;
+  -moz-margin-end: 0px !important;
+}
+
