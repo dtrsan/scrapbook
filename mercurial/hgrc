@@ -15,6 +15,7 @@ hg.example.hr = 01:23:45:67:89:ab:cd:ef:ff:01:23:45:67:89:ab:cd:ef:ff:01:23
 
 [extensions]
 color =
+churn =
 graphlog =
 histedit =
 purge =
