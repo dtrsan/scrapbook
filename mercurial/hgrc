@@ -30,7 +30,12 @@ color =
 churn =
 graphlog =
 histedit =
+interhg =
+largefiles =
+parentrevspec =
+progress =
 purge =
+rebase =
 
 [color]
 status.modified = cyan
