@@ -60,7 +60,7 @@ resolve.resolved = green bold
 bookmarks.current = green
 
 branches.active = none
-branches.closed = none
+branches.closed = black bold
 branches.current = green
 branches.inactive = none
 
