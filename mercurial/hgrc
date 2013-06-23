@@ -10,8 +10,8 @@ verbose = true
 ; Templates are taken from hgtip.com and slightly modified.
 ; (http://hgtip.com/tips/advanced/2010-01-15-styling-mercurials-cli/)
 ;nlog = log --style=/usr/local/share/mercurial/templates/map-cmdline.nlog
-;slog = log --style=/user/local/share/mercurial/templates/map-cmdline.slog
-;sglog = glog --style=/user/local/share/mercurial/templates/map-cmdline.sglog
+;slog = log --style=/usr/local/share/mercurial/templates/map-cmdline.slog
+;sglog = glog --style=/usr/local/share/mercurial/templates/map-cmdline.sglog
 
 nudge = push --rev .
 show = log -pr
