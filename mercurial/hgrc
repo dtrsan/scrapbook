@@ -13,6 +13,9 @@ verbose = true
 ;slog = log --style=/user/local/share/mercurial/templates/map-cmdline.slog
 ;sglog = glog --style=/user/local/share/mercurial/templates/map-cmdline.sglog
 
+nudge = push --rev .
+show = log -pr
+
 [auth]
 example.prefix = hg.example.com
 example.username = dtrsan
