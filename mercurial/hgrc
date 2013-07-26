@@ -32,6 +32,7 @@ graphlog =
 histedit =
 interhg =
 largefiles =
+mq =
 parentrevspec =
 progress =
 purge =
