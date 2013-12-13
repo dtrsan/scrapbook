@@ -47,6 +47,9 @@ match ExtraWhitespace /\s\+$\| \+\ze\t/
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$\| \+\ze\t/
 
+autocmd ColorScheme * highlight ColorColumn ctermbg=yellow guibg=yellow
+call matchadd('ColorColumn', '\%81v', 100)
+
 " Searching
 set hlsearch                    " highlight matches
 set incsearch                   " incremental searching
@@ -86,6 +89,8 @@ if has('statusline')
    " (%{synIDattr(synID(line('.'),col('.'),0),'name')})
    "        only for debug : display the current syntax item name
    " %=     right-align following items
+   " [%{'".&ff."'}]    shows file format
+   " [%{strlen(&fenc)?&fenc:&enc}]  shows file encoding
    " [\%03.3b|0x\%02.2B]    ASCII / Hexadecimal value of a char
    " #%n    buffer number
    " %l/%L:%p%%,%c%V    line number, total number of lines, percentage through
@@ -100,6 +105,8 @@ if has('statusline')
          let &stl.="%{'~'[&pm=='']} "
          "let &stl.="[%{getcwd()}]"
          let &stl.="%="
+         let &stl.="[%{'".&ff."'}] "
+         let &stl.="[%{strlen(&fenc)?&fenc:&enc}] "
          let &stl.="[\%03.3b|0x\%02.2B]    "
          let &stl.="#%n "
          let &stl.="%l/%L:%p%%,%c%V "
@@ -113,6 +120,8 @@ if has('statusline')
          "let &stl.="[%{getcwd()}]"
          let &stl.=" (%{synIDattr(synID(line('.'),col('.'),0),'name')})"
          let &stl.="%="
+         let &stl.="[%{'".&ff."'}] "
+         let &stl.="[%{strlen(&fenc)?&fenc:&enc}] "
          let &stl.="[\%03.3b|0x\%02.2B]    "
          let &stl.="#%n "
          let &stl.="%l/%L:%p%%,%c%V "
