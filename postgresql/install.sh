@@ -1,7 +1,7 @@
 #!/bin/bash
 
 NAMESPACE="postgresql"
-FILES=( pgpass )
+FILES=( pgpass psqlrc )
 
 if [ "$DIR" == "" ]; then
     DIR="$( cd -P "$( dirname "$0" )" && pwd )"

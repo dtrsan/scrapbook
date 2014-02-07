@@ -1,0 +1,27 @@
+-- Set client encoding to unicode
+\encoding unicode
+
+-- Shows psql query execution time
+\timing
+
+-- Command history
+--\set HISTFILE ~/.psql_history- :DBNAME
+\set HISTSIZE 2000
+
+-- Colorizing the prompt
+--  <ESC>[{attr1};...;{attrn}m
+-- %[%033[{attr1};...;{attrn}m%]
+-- http://www.postgresql.org/docs/9.2/static/app-psql.html#APP-PSQL-PROMPTING
+--
+-- Production
+\set PROMPT1 '%[%033[2;36m%]psql%[%033[0m%]://%[%033[1;31m%]%n@%`hostname`%[%033[0m%]:%[%033[2;36m%]%>%[%033[0m%]/%[%033[1;34m%]%/%[%033[1;31m%]%x%[%033[0m%] %# '
+-- Development
+--\set PROMPT1 '%[%033[2;36m%]psql%[%033[0m%]://%[%033[1;36m%]%n@%`hostname`%[%033[0m%]:%[%033[2;36m%]%>%[%033[0m%]/%[%033[1;34m%]%/%[%033[1;31m%]%x%[%033[0m%] %# '
+-- Alternative development
+--\set PROMPT1 '%[%033[2;36m%]psql%[%033[0m%]://%[%033[1;32m%]%n@%`hostname`%[%033[0m%]:%[%033[2;36m%]%>%[%033[0m%]/%[%033[1;34m%]%/%[%033[1;31m%]%x%[%033[0m%] %# '
+-- Everything else
+--\set PROMPT1 '%[%033[2;36m%]psql%[%033[0m%]://%[%033[1;33m%]%n@%`hostname`%[%033[0m%]:%[%033[2;36m%]%>%[%033[0m%]/%[%033[1;34m%]%/%[%033[1;31m%]%x%[%033[0m%] %# '
+
+-- All
+\set PROMPT2 '%[%033[0m%]%# '
+
