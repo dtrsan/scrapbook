@@ -1,12 +1,19 @@
 -- Set client encoding to unicode
 \encoding unicode
 
+-- Sets the '(null)' to be printed in place of a null value
+\pset null '(null)'
+
 -- Shows psql query execution time
 \timing
 
 -- Command history
 --\set HISTFILE ~/.psql_history- :DBNAME
 \set HISTSIZE 2000
+
+-- no border = 0, internal dividing lines = 1, table frame = 2
+\pset border 2
+\pset linestyle unicode
 
 -- Colorizing the prompt
 --  <ESC>[{attr1};...;{attrn}m
