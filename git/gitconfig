@@ -1,11 +1,31 @@
-[color]
-	ui = auto
 [user]
 	email = domagoj.trsan@gmail.com
 	name = Domagoj Tršan
+#	signingkey = <signingkey>
+
+[core]
+	whitespace = trailing-space,space-before-tab,indent-with-non-tab
+
+[color]
+	ui = auto
+
 [alias]
 	br = branch
 	ci = commit --verbose
 	co = checkout
 	st = status
-	stat = status
+	last = log -1 HEAD
+	show = log -p
+	slog = log --all --decorate --pretty=format:\"%C(yellow)%h\\ %Creset%s%C(black bold)\\ (%ad by %cn)%Creset%Cgreen%d%Creset\"
+	glog = log --all --graph
+	sglog = log --all --graph --abbrev-commit --decorate --format=format:'%C(yellow)%h%Creset - %C(white)%s%Creset %Cgreen%d%Creset%n''		  %C(black bold)%ad by %cn%Creset%n'
+
+[push]
+	default = simple
+
+[commit]
+#	gpgsign = true
+
+[diff]
+	tool = vimdiff
+
