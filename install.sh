@@ -1,7 +1,8 @@
 #!/bin/bash
 
 SCRIPT_DIR="$( cd -P "$( dirname "$0" )" && pwd )"
-NAMESPACES=( bash colordiff git gvim htop mercurial most postgresql rtorrent ruby screen sqlite ssh synergy tmux vim )
+NAMESPACES=( bash colordiff git gvim htop mercurial most postgresql rtorrent \
+             ruby screen sqlite ssh synergy tmux transmission-daemon vim )
 
 INSTALL=()
 
