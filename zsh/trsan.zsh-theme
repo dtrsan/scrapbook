@@ -30,7 +30,9 @@ function flags() {
 
 local ret_status="%(?:%{$fg_bold[green]%}⨠ :%{$fg_bold[red]%}⨠ %s)"
 local host_color=$(_host_color)
-local user="%{$fg_bold[$host_color]%}%n%{$reset_color%}"
+local user_color=$host_color
+if [ -z $UID ]; then; user_color="red"; fi
+local user="%{$fg_bold[$user_color]%}%n%{$reset_color%}"
 local host="%{$fg_bold[$host_color]%}@%m%{$reset_color%}"
 local cwd="%{$fg_bold[blue]%}%~%{$reset_color%}"
 
