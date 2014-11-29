@@ -3,7 +3,7 @@
 NAMESPACE="zsh"
 FILES=( zshrc )
 THEMES=( trsan )
-PLUGINS=( colordiff mailcheck )
+PLUGINS=( colordiff mailcheck transmissionbt )
 CUSTOMS=( aliases )
 
 OH_MY_ZSH_DIR='.oh-my-zsh'

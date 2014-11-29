@@ -58,7 +58,7 @@ ZSH_THEME="trsan"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(colordiff cp encode64 git jsontools mailcheck torrent urltools)
+plugins=(colordiff cp encode64 git jsontools mailcheck torrent transmissionbt urltools)
 
 source $ZSH/oh-my-zsh.sh
 
