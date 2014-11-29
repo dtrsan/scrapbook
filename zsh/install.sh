@@ -24,9 +24,10 @@ for i in ${PLUGINS[@]}; do
     /usr/bin/install -m 644 $DIR/${i}.plugin.zsh ~/$OH_MY_ZSH_DIR/custom/plugins/${i}/${i}.plugin.zsh
 done
 
+/bin/mkdir -p -m 755 ~/$OH_MY_ZSH_DIR/custom/themes
 for i in ${THEMES[@]}; do
     echo -e "\033[1;32m-> installing theme \033[1;37m$NAMESPACE/${i}\033[0m"
-    /usr/bin/install -m 644 $DIR/${i}.zsh-theme ~/$OH_MY_ZSH_DIR/themes/${i}.zsh-theme
+    /usr/bin/install -m 644 $DIR/${i}.zsh-theme ~/$OH_MY_ZSH_DIR/custom/themes/${i}.zsh-theme
 done
 
 for i in ${CUSTOMS[@]}; do
