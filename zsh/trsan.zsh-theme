@@ -46,7 +46,7 @@ ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[yellow]%})%{$fg[red]%}✗"
 
 export LSCOLORS="ExFxgxcxBxDxdxHbabhebe"
 LS_COLORS="di=01;34:ln=01;35:so=36:pi=32:ex=01;31:bd=01;33:cd=33:su=01;37;41:sg=00;41:tw=37;44:ow=31;44:"
-LS_COLORS="${LS_COLORS}or=31;40:mi=31;40:st=01;34:"
+LS_COLORS="${LS_COLORS}or=0:mi=31:st=01;34:"
 
 export LS_COLORS
 
