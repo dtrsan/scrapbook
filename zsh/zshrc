@@ -3,6 +3,17 @@
 # git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 export ZSH=$HOME/.oh-my-zsh
 
+# trsan theme configuration.
+# Set this with your own host names to enable different prompt colors per host
+# group.
+PROD_HOSTS=( )
+PROD_HOSTS_COLOR="red"
+DEV_HOSTS=( blashyrkh )
+DEV_HOSTS_COLOR="cyan"
+PRIVATE_HOSTS=( delirium havoc nemesis )
+PRIVATE_HOSTS_COLOR="green"
+OTHER_HOSTS_COLOR="white"
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -54,7 +65,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 # Paths
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/local/sbin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # Locale

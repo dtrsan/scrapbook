@@ -1,7 +1,21 @@
 #!/usr/bin/env zsh
 
-# Depends on the following plugins
+# Theme depends on the following plugins
 # - mailcheck
+
+function _host_color() {
+    local color=${OTHER_HOSTS_COLOR}
+
+    if [[ ${PRIVATE_HOSTS[(r)$SHORT_HOST]} == $SHORT_HOST ]]; then
+        color=${PRIVATE_HOSTS_COLOR}
+    elif [[ ${DEV_HOSTS[(r)$SHORT_HOST]} == $SHORT_HOST ]]; then
+        color=${DEV_HOSTS_COLOR}
+    elif [[ ${PROD_HOSTS[(r)$SHORT_HOST]} == $SHORT_HOST ]]; then
+        color=${PROD_HOSTS_COLOR}
+    fi
+
+    echo $color;
+}
 
 function flags() {
     local flags=""
@@ -15,8 +29,9 @@ function flags() {
 }
 
 local ret_status="%(?:%{$fg_bold[green]%}⨠ :%{$fg_bold[red]%}⨠ %s)"
-local user="%{$fg_bold[green]%}%n%{$reset_color%}"
-local host="%{$fg_bold[green]%}@%m%{$reset_color%}"
+local host_color=$(_host_color)
+local user="%{$fg_bold[$host_color]%}%n%{$reset_color%}"
+local host="%{$fg_bold[$host_color]%}@%m%{$reset_color%}"
 local cwd="%{$fg_bold[blue]%}%~%{$reset_color%}"
 
 PROMPT='${ret_status}$(flags)${user}${host}:${cwd} $(git_prompt_info)%# '
