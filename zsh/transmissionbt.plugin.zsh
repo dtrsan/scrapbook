@@ -3,8 +3,17 @@
 alias txd="transmission-daemon --logfile /tmp/transmission-$USER.log"
 alias txadd='transmission-remote -a'
 alias tx='transmission-remote'
-alias txrm='transmission-remote -r -t'
-alias txstart='transmission-remote -s -t'
-alias txstop='transmission-remote -S -t'
 alias txls='transmission-remote -l'
+
+function txrm() {
+    transmission-remote -t $1 -r
+}
+
+function txstart() {
+    transmission-remote -t $1 -s
+}
+
+function txstop() {
+    transmission-remote -t $1 -S
+}
 
