@@ -136,17 +136,6 @@ if has('statusline')
    endif
 endif
 
-if has('gui_running')
-  " MacVim specific confguration
-  if has("gui_macvim")
-    " Disable toolbar on MacVim
-    set go-=T
-    " MacVim font
-    set guifont=Menlo:h11
-  endif
-else
-  colorscheme ron
-endif
 
 " Vimdiff colors
 highlight DiffAdd term=bold
