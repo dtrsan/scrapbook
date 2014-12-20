@@ -1,5 +1,9 @@
 set nocompatible                " choose no compatibility with legacy vi
+
 syntax enable
+set background=dark
+colorscheme solarized
+
 set encoding=utf-8
 set showcmd                     " display incomplete commands
 filetype plugin indent on       " load file type plugins + indentation
@@ -13,22 +17,8 @@ set undoreload=10000            " maximum number lines to save for undo on a
 set number                      " display line numbers
 " Toggle between showing and hiding line numbers
 nmap <C-N><C-N> :set invnumber<CR>
-" Define highlight colors for line numbers
-autocmd ColorScheme * highlight LineNr term=bold
-            \ ctermfg=DarkGrey ctermbg=NONE cterm=bold
-            \ guifg=DarkGrey guibg=NONE gui=bold
 
 set cursorline                  " enable current line highlighting
-" Clear current line highlight
-autocmd ColorScheme * highlight CursorLine term=NONE
-            \ ctermfg=NONE cterm=NONE
-            \ guifg=NONE gui=NONE
-
-" Define highlight colors for line numbers of current line
-autocmd ColorScheme * highlight CursorLineNr term=bold
-            \ ctermfg=Gray cterm=bold
-            \ guifg=Gray gui=bold
-
 
 " Whitespace
 set nowrap                      " don't wrap lines
@@ -135,19 +125,4 @@ if has('statusline')
       set titlestring=%t%(\ [%R%M]%)
    endif
 endif
-
-
-" Vimdiff colors
-highlight DiffAdd term=bold
-            \ ctermfg=White ctermbg=Green cterm=bold
-            \ guifg=White guibg=Green gui=bold
-highlight DiffDelete term=NONE
-            \ ctermfg=Black ctermbg=Red cterm=NONE
-            \ guifg=Black guibg=Red gui=NONE
-highlight DiffChange term=bold
-            \ ctermfg=White ctermbg=Blue cterm=bold
-            \ gui=none guifg=White guibg=Blue gui=bold
-highlight DiffText term=bold
-            \ ctermfg=White ctermbg=Cyan  cterm=bold
-            \ guifg=White guibg=Cyan gui=bold
 
