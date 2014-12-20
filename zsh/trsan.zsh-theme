@@ -28,16 +28,16 @@ function flags() {
     echo $flags
 }
 
-local ret_status="%(?:%{$fg_bold[green]%}⨠ :%{$fg_bold[red]%}⨠ %s)"
+local ret_status="%(?:%{$fg[green]%}⨠ :%{$fg[red]%}⨠ %s)"
 local host_color=$(_host_color)
 local user_color=$host_color
 if [[  "$UID" == 0 ]]; then; user_color="red"; fi
-local user="%{$fg_bold[$user_color]%}%n%{$reset_color%}"
-local host="%{$fg_bold[$host_color]%}@%m%{$reset_color%}"
-local cwd="%{$fg_bold[blue]%}%~%{$reset_color%}"
+local user="%{$fg[$user_color]%}%n%{$reset_color%}"
+local host="%{$fg[$host_color]%}@%m%{$reset_color%}"
+local cwd="%{$fg[blue]%}%~%{$reset_color%}"
 
 PROMPT='${ret_status}$(flags)${user}${host}:${cwd} $(git_prompt_info)%# '
-PS2='%{$fg_bold[green]%}>%{$reset_color%} '
+PS2='%{$fg[green]%}>%{$reset_color%} '
 
 #RPROMPT='[%*]'
 
@@ -46,9 +46,9 @@ ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[yellow]%})%{$fg[green]%}✔"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[yellow]%})%{$fg[red]%}✗"
 
-export LSCOLORS="ExFxgxcxBxDxdxHbabhebe"
-LS_COLORS="di=01;34:ln=01;35:so=36:pi=32:ex=01;31:bd=01;33:cd=33:su=01;37;41:sg=00;41:tw=37;44:ow=31;44:"
-LS_COLORS="${LS_COLORS}or=0:mi=31:st=01;34:"
+export LSCOLORS="exfxgxcxbxdxdxhbabhebe"
+LS_COLORS="di=34:ln=35:so=36:pi=32:ex=31:bd=33:cd=33:su=37;41:sg=41:tw=37;44:ow=31;44:"
+LS_COLORS="${LS_COLORS}or=0:mi=31:st=34:"
 
 export LS_COLORS
 
