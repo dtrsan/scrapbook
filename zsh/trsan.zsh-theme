@@ -36,7 +36,7 @@ local user="%{$fg[$user_color]%}%n%{$reset_color%}"
 local host="%{$fg[$host_color]%}@%m%{$reset_color%}"
 local cwd="%{$fg[blue]%}%~%{$reset_color%}"
 
-PROMPT='${ret_status}$(flags)${user}${host}:${cwd} $(git_prompt_info)%# '
+PROMPT='${ret_status}$(flags)${user}${host}:${cwd} $(git_prompt_info)$(hg_prompt_info)%# '
 PS2='%{$fg[green]%}>%{$reset_color%} '
 
 #RPROMPT='[%*]'
@@ -45,6 +45,13 @@ ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[yellow]%}git:(%{$fg[green]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[yellow]%})%{$fg[green]%}✔"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[yellow]%})%{$fg[red]%}✗"
+
+ZSH_THEME_HG_PROMPT_PREFIX="%{$fg[yellow]%}hg:("
+ZSH_THEME_REPO_NAME_COLOR="%{$fg[green]%}"
+ZSH_THEME_HG_PROMPT_SUFFIX="%{$reset_color%}"
+ZSH_THEME_HG_PROMPT_CLEAN="$ZSH_THEME_GIT_PROMPT_CLEAN "
+ZSH_THEME_HG_PROMPT_DIRTY="$ZSH_THEME_GIT_PROMPT_DIRTY "
+ZSH_PROMPT_BASE_COLOR="%{$reset_color%}"
 
 export LSCOLORS="exfxgxcxbxdxdxhbabhebe"
 LS_COLORS="di=34:ln=35:so=36:pi=32:ex=31:bd=33:cd=33:su=37;41:sg=41:tw=37;44:ow=31;44:"
