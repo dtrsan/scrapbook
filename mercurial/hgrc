@@ -37,6 +37,7 @@ parentrevspec =
 progress =
 purge =
 rebase =
+record =
 shelve =
 
 [color]
