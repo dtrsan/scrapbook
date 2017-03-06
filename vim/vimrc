@@ -15,6 +15,7 @@ set undoreload=10000            " maximum number lines to save for undo on a
                                 " buffer reload
 
 set number                      " display line numbers
+set relativenumber              " display relative line numbers
 " Toggle between showing and hiding line numbers
 nmap <C-N><C-N> :set invnumber<CR>
 
