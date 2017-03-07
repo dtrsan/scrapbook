@@ -61,6 +61,10 @@ set foldnestmax=100     " deepest fold is 100 levels
 set nofoldenable        " dont fold by default
 set foldlevel=1
 
+" write the file when you accidentally opened it without the right (root)
+" privileges
+cmap w!! w !sudo tee % > /dev/null
+
 " Easier window navigation
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
