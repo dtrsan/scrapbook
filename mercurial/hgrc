@@ -52,29 +52,29 @@ status.ignored = none
 status.clean = none
 status.copied = none
 
-qseries.applied = blue bold underline
+qseries.applied = blue underline
 qseries.unapplied = none
-qseries.missing = red bold
+qseries.missing = red
 
-diff.diffline = bold
-diff.extended = cyan bold
-diff.file_a = red bold
-diff.file_b = green bold
+diff.diffline = none
+diff.extended = cyan
+diff.file_a = red
+diff.file_b = green
 diff.hunk = magenta
 diff.deleted = red
 diff.inserted = green
 diff.changed = white
-diff.trailingwhitespace = bold red_background
+diff.trailingwhitespace = red_background
 
-resolve.unresolved = red bold
-resolve.resolved = green bold
+resolve.unresolved = red
+resolve.resolved = green
 
 bookmarks.current = green
 
 branches.active = none
-branches.closed = black bold
+branches.closed = none underline
 branches.current = green
-branches.inactive = none
+branches.inactive = red
 
 tags.normal = green
 tags.local = none
