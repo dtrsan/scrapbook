@@ -2,11 +2,14 @@ set nocompatible                " choose no compatibility with legacy vi
 
 syntax enable
 set background=dark
+set t_Co=256
 colorscheme solarized
 
 set encoding=utf-8
 set showcmd                     " display incomplete commands
 filetype plugin indent on       " load file type plugins + indentation
+
+set wildmenu                    " visual autocomplete for command menu
 
 set history=10000               " command history (default is 20)
 
@@ -20,6 +23,7 @@ set relativenumber              " display relative line numbers
 nmap <C-N><C-N> :set invnumber<CR>
 
 set cursorline                  " enable current line highlighting
+set showmatch                   " highlight matching [{()}]
 
 " Whitespace
 set nowrap                      " don't wrap lines
