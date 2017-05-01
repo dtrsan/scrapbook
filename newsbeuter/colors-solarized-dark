@@ -1,0 +1,14 @@
+# solarized color scheme for newsbeuter <http://www.newsbeuter.org/>
+# more on solarized: http://ethanschoonover.com/solarized
+
+# Edited by Domagoj Tršan
+# Added color definitions for listnormal_unread and listfocus_unread
+
+color listnormal        color244 color234
+color listfocus         color166 color235
+color listnormal_unread color33 color234
+color listfocus_unread  color166 color235
+color info              color136 color235
+color background        color244 color234
+color article           color244 color234
+
